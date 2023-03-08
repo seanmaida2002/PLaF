@@ -1,0 +1,5 @@
+(** @canonical Arith.Ds *)
+module Ds = Arith__Ds
+
+(** @canonical Arith.Interp *)
+module Interp = Arith__Interp

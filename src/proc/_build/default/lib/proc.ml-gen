@@ -1,0 +1,5 @@
+(** @canonical Proc.Ds *)
+module Ds = Proc__Ds
+
+(** @canonical Proc.Interp *)
+module Interp = Proc__Interp

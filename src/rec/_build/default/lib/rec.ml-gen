@@ -1,0 +1,5 @@
+(** @canonical Rec.Ds *)
+module Ds = Rec__Ds
+
+(** @canonical Rec.Interp *)
+module Interp = Rec__Interp
