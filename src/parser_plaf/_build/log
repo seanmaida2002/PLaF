@@ -1,9 +1,9 @@
 # dune install
 # OCAMLPARAM: unset
 # Workspace root: "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/parser_plaf"
-$ /usr/bin/nproc > /tmp/dune8c4cd5.output 2> /dev/null
+$ /usr/bin/nproc > /tmp/dune95022c.output 2> /dev/null
 # Auto-detected concurrency: 2
-$ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune266a78.output
+$ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dunea2cb00.output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -108,6 +108,6 @@ $ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune266a78.output
 #      ; windows_unicode = false
 #      }
 #  }
-$ /usr/bin/opam config var prefix > /tmp/dune4f4d05.output
+$ /usr/bin/opam config var prefix > /tmp/dune060856.output
 > [WARNING] var was deprecated in version 2.1 of the opam CLI. Use opam var instead or set OPAMCLI environment variable to 2.0.
-$ /home/ubuntu/.opam/default/bin/ocamlfind printconf destdir > /tmp/duned2bc4b.output
+$ /home/ubuntu/.opam/default/bin/ocamlfind printconf destdir > /tmp/dunebe05ec.output

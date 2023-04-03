@@ -1,28 +1,31 @@
 # dune utop
 # OCAMLPARAM: unset
+# Shared cache: disabled
 # Workspace root: "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/arith"
-$ /usr/bin/nproc > /tmp/dunea08c29.output 2> /dev/null
 # Auto-detected concurrency: 2
-# disable binary cache
-$ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune28775c.output
+$ /usr/bin/ocamlc.opt -config > /tmp/dune_5f011e_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
-#  ; profile = Dyn
+#  ; profile = Dev
 #  ; merlin = true
 #  ; for_host = None
 #  ; fdo_target_exe = None
-#  ; build_dir = "default"
+#  ; build_dir = In_build_dir "default"
 #  ; toplevel_path = Some External "/home/ubuntu/.opam/default/lib/toplevel"
-#  ; ocaml_bin = External "/home/ubuntu/.opam/default/bin"
-#  ; ocaml = Ok External "/home/ubuntu/.opam/default/bin/ocaml"
-#  ; ocamlc = External "/home/ubuntu/.opam/default/bin/ocamlc.opt"
-#  ; ocamlopt = Ok External "/home/ubuntu/.opam/default/bin/ocamlopt.opt"
-#  ; ocamldep = Ok External "/home/ubuntu/.opam/default/bin/ocamldep.opt"
-#  ; ocamlmklib = Ok External "/home/ubuntu/.opam/default/bin/ocamlmklib.opt"
+#  ; ocaml_bin = External "/usr/bin"
+#  ; ocaml = Ok External "/usr/bin/ocaml"
+#  ; ocamlc = External "/usr/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/usr/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/usr/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/usr/bin/ocamlmklib.opt"
 #  ; env =
 #      map
-#        { "INSIDE_DUNE" :
+#        { "DUNE_OCAML_HARDCODED" : "/home/ubuntu/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/usr/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/arith"
+#        ; "INSIDE_DUNE" :
 #            "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/arith/_build/default"
 #        ; "OCAMLFIND_IGNORE_DUPS_IN" :
 #            "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/arith/_build/install/default/lib"
@@ -33,51 +36,91 @@ $ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune28775c.output
 #        ; "OCAML_COLOR" : "always"
 #        ; "OPAMCOLOR" : "always"
 #        }
-#  ; findlib_path = [ External "/home/ubuntu/.opam/default/lib" ]
+#  ; findlib_paths = [ External "/home/ubuntu/.opam/default/lib" ]
 #  ; arch_sixtyfour = true
 #  ; natdynlink_supported = true
 #  ; supports_shared_libraries = true
 #  ; ocaml_config =
-#      { version = "4.06.1"
-#      ; standard_library_default = "/home/ubuntu/.opam/default/lib/ocaml"
-#      ; standard_library = "/home/ubuntu/.opam/default/lib/ocaml"
-#      ; standard_runtime = "/home/ubuntu/.opam/default/bin/ocamlrun"
+#      { version = "4.13.1"
+#      ; standard_library_default = "/usr/lib/ocaml"
+#      ; standard_library = "/usr/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
 #      ; ccomp_type = "cc"
-#      ; c_compiler = "gcc"
+#      ; c_compiler = "aarch64-linux-gnu-gcc"
 #      ; ocamlc_cflags =
-#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fcommon"; "-fPIC" ]
-#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
-#      ; ocamlopt_cflags =
-#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fcommon" ]
-#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
-#      ; bytecomp_c_compiler =
-#          [ "gcc"
-#          ; "-O2"
+#          [ "-O2"
 #          ; "-fno-strict-aliasing"
 #          ; "-fwrapv"
-#          ; "-fcommon"
+#          ; "-pthread"
 #          ; "-fPIC"
-#          ; "-D_FILE_OFFSET_BITS=64"
-#          ; "-D_REENTRANT"
+#          ; "-g"
+#          ; "-O2"
+#          ; "-ffile-prefix-map=/build/ocaml-R44WLO/ocaml-4.13.1=."
+#          ; "-fstack-protector-strong"
+#          ; "-Wformat"
+#          ; "-Werror=format-security"
 #          ]
-#      ; bytecomp_c_libraries = [ "-lm"; "-lcurses"; "-lpthread" ]
-#      ; native_c_compiler =
-#          [ "gcc"
+#      ; ocamlc_cppflags =
+#          [ "-D_FILE_OFFSET_BITS=64"; "-Wdate-time"; "-D_FORTIFY_SOURCE=2" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-g"
+#          ; "-O2"
+#          ; "-ffile-prefix-map=/build/ocaml-R44WLO/ocaml-4.13.1=."
+#          ; "-fstack-protector-strong"
+#          ; "-Wformat"
+#          ; "-Werror=format-security"
+#          ]
+#      ; ocamlopt_cppflags =
+#          [ "-D_FILE_OFFSET_BITS=64"; "-Wdate-time"; "-D_FORTIFY_SOURCE=2" ]
+#      ; bytecomp_c_compiler =
+#          [ "aarch64-linux-gnu-gcc"
 #          ; "-O2"
 #          ; "-fno-strict-aliasing"
 #          ; "-fwrapv"
-#          ; "-fcommon"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-g"
+#          ; "-O2"
+#          ; "-ffile-prefix-map=/build/ocaml-R44WLO/ocaml-4.13.1=."
+#          ; "-fstack-protector-strong"
+#          ; "-Wformat"
+#          ; "-Werror=format-security"
 #          ; "-D_FILE_OFFSET_BITS=64"
-#          ; "-D_REENTRANT"
+#          ; "-Wdate-time"
+#          ; "-D_FORTIFY_SOURCE=2"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "aarch64-linux-gnu-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-g"
+#          ; "-O2"
+#          ; "-ffile-prefix-map=/build/ocaml-R44WLO/ocaml-4.13.1=."
+#          ; "-fstack-protector-strong"
+#          ; "-Wformat"
+#          ; "-Werror=format-security"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-Wdate-time"
+#          ; "-D_FORTIFY_SOURCE=2"
 #          ]
 #      ; native_c_libraries = [ "-lm" ]
-#      ; cc_profile = [ "-pg" ]
+#      ; native_pack_linker = [ "aarch64-linux-gnu-ld"; "-r"; "-o" ]
+#      ; cc_profile = []
 #      ; architecture = "arm64"
 #      ; model = "default"
 #      ; int_size = 63
 #      ; word_size = 64
 #      ; system = "linux"
-#      ; asm = [ "as" ]
+#      ; asm = [ "aarch64-linux-gnu-as" ]
 #      ; asm_cfi_supported = true
 #      ; with_frame_pointers = false
 #      ; ext_exe = ""
@@ -93,17 +136,17 @@ $ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune28775c.output
 #      ; profiling = false
 #      ; flambda = false
 #      ; spacetime = false
-#      ; safe_string = false
-#      ; exec_magic_number = "Caml1999X011"
-#      ; cmi_magic_number = "Caml1999I022"
-#      ; cmo_magic_number = "Caml1999O022"
-#      ; cma_magic_number = "Caml1999A022"
-#      ; cmx_magic_number = "Caml1999Y022"
-#      ; cmxa_magic_number = "Caml1999Z022"
-#      ; ast_impl_magic_number = "Caml1999M022"
-#      ; ast_intf_magic_number = "Caml1999N022"
-#      ; cmxs_magic_number = "Caml1999D022"
-#      ; cmt_magic_number = "Caml1999T022"
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X030"
+#      ; cmi_magic_number = "Caml1999I030"
+#      ; cmo_magic_number = "Caml1999O030"
+#      ; cma_magic_number = "Caml1999A030"
+#      ; cmx_magic_number = "Caml1999Y030"
+#      ; cmxa_magic_number = "Caml1999Z030"
+#      ; ast_impl_magic_number = "Caml1999M030"
+#      ; ast_intf_magic_number = "Caml1999N030"
+#      ; cmxs_magic_number = "Caml1999D030"
+#      ; cmt_magic_number = "Caml1999T030"
 #      ; natdynlink_supported = true
 #      ; supports_shared_libraries = true
 #      ; windows_unicode = false
