@@ -1,6 +1,5 @@
 Clflags.include_dirs :=
   [ "/home/ubuntu/.opam/default/lib/bigarray-compat"
-  ; "/home/ubuntu/.opam/default/lib/bytes"
   ; "/home/ubuntu/.opam/default/lib/camomile"
   ; "/home/ubuntu/.opam/default/lib/camomile/default_config"
   ; "/home/ubuntu/.opam/default/lib/camomile/dyn"
@@ -28,6 +27,5 @@ Clflags.include_dirs :=
   ; "/home/ubuntu/.opam/default/lib/utop"
   ; "/home/ubuntu/.opam/default/lib/zed"
   ; "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/explicit-refs/_build/default/lib/.explicit_refs.objs/byte"
-  ; "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/explicit-refs/_build/default/lib/.explicit_refs.objs/native"
   ];
 UTop_main.main ();

@@ -5,6 +5,8 @@ open Checked.Interp;;
 open Checked.Ds;;
 open Parser_plaf.Ast;;
 open Parser_plaf.Parser;;
+open Explicit_refs_mf.Interp;;
+open Explicit_refs_mf.Ds;;
 (* Added by OPAM. *)
 let () =
   try Topdirs.dir_directory (Sys.getenv "OCAML_TOPLEVEL_PATH")

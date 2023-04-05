@@ -1,18 +1,17 @@
 # dune utop
 # OCAMLPARAM: unset
+# Shared cache: disabled
 # Workspace root: "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/explicit-refs"
-$ /usr/bin/nproc > /tmp/duneda68cd.output 2> /dev/null
 # Auto-detected concurrency: 2
-# disable binary cache
-$ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune10511e.output
+$ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune_655c16_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
-#  ; profile = Dyn
+#  ; profile = Dev
 #  ; merlin = true
 #  ; for_host = None
 #  ; fdo_target_exe = None
-#  ; build_dir = "default"
+#  ; build_dir = In_build_dir "default"
 #  ; toplevel_path = Some External "/home/ubuntu/.opam/default/lib/toplevel"
 #  ; ocaml_bin = External "/home/ubuntu/.opam/default/bin"
 #  ; ocaml = Ok External "/home/ubuntu/.opam/default/bin/ocaml"
@@ -22,7 +21,11 @@ $ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune10511e.output
 #  ; ocamlmklib = Ok External "/home/ubuntu/.opam/default/bin/ocamlmklib.opt"
 #  ; env =
 #      map
-#        { "INSIDE_DUNE" :
+#        { "DUNE_OCAML_HARDCODED" : "/home/ubuntu/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/home/ubuntu/.opam/default/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/explicit-refs"
+#        ; "INSIDE_DUNE" :
 #            "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/explicit-refs/_build/default"
 #        ; "OCAMLFIND_IGNORE_DUPS_IN" :
 #            "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/explicit-refs/_build/install/default/lib"
@@ -33,7 +36,7 @@ $ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune10511e.output
 #        ; "OCAML_COLOR" : "always"
 #        ; "OPAMCOLOR" : "always"
 #        }
-#  ; findlib_path = [ External "/home/ubuntu/.opam/default/lib" ]
+#  ; findlib_paths = [ External "/home/ubuntu/.opam/default/lib" ]
 #  ; arch_sixtyfour = true
 #  ; natdynlink_supported = true
 #  ; supports_shared_libraries = true
@@ -71,6 +74,7 @@ $ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune10511e.output
 #          ; "-D_REENTRANT"
 #          ]
 #      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
 #      ; cc_profile = [ "-pg" ]
 #      ; architecture = "arm64"
 #      ; model = "default"

@@ -241,5 +241,3 @@ texpr:
 | "ref"; t1 = texpr { RefType(t1) }
 | LBRACE; ts = separated_list(SEMICOLON, fieldtype); RBRACE { RecordType(ts) }
      
-
-    
