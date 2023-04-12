@@ -3,7 +3,7 @@
 # Shared cache: disabled
 # Workspace root: "/home/ubuntu/Home/Desktop/CS 496/PLaF/src/parser_plaf"
 # Auto-detected concurrency: 2
-$ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune_d1afb6_output
+$ /home/ubuntu/.opam/default/bin/ocamlc.opt -config > /tmp/dune_1953e4_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
