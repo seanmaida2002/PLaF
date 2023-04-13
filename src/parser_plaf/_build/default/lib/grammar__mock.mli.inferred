@@ -1,6 +1,7 @@
 type token =
     UNPAIR
   | UNITTYPE
+  | TREETYPE
   | TL
   | TIMES
   | THEN
@@ -25,13 +26,14 @@ type token =
   | NODE
   | NEWREF
   | NEW
+  | MKLIST
   | MINUS
   | MIN
   | METHOD
   | MAXL
   | LPAREN
   | LLANGLE
-  | LIST
+  | LISTTYPE
   | LETREC
   | LET
   | LBRACE
@@ -95,6 +97,7 @@ val xv_rdecs :
   string * string * Ast.texpr option * Ast.texpr option * Ast.expr
 val xv_prog : Ast.prog
 val xv_option_type_annotation_ : Ast.texpr option
+val xv_option_texpr_ : Ast.texpr option
 val xv_option_implements_declaration_ : string option
 val xv_obj_fields : string * Ast.texpr option
 val xv_nonempty_list_rdecs_ : Ast.rdecs

@@ -40,13 +40,14 @@
 %token LBRACE
 %token LET
 %token LETREC
-%token LIST
+%token LISTTYPE
 %token LLANGLE
 %token LPAREN
 %token MAXL
 %token METHOD
 %token MIN
 %token MINUS
+%token MKLIST
 %token NEW
 %token NEWREF
 %token NODE
@@ -71,6 +72,7 @@
 %token THEN
 %token TIMES
 %token TL
+%token TREETYPE
 %token UNITTYPE
 %token UNPAIR
 %nonassoc ELSE EQUALS EQUALSMUTABLE IN
@@ -78,7 +80,7 @@
 %left LLANGLE MINUS PLUS RRANGLE
 %left DIVIDED TIMES
 %left DOT
-%nonassoc REFTYPE
+%nonassoc LISTTYPE REFTYPE TREETYPE
 %type <unit> prog
 %%
 
@@ -86,6 +88,12 @@ option_implements_declaration_:
   
     {}
 | implements_declaration
+    {}
+
+option_texpr_:
+  
+    {}
+| texpr
     {}
 
 option_type_annotation_:
@@ -277,11 +285,11 @@ expr:
     {}
 | LET LANGLE loption_separated_nonempty_list_COMMA_ID__ RANGLE EQUALS expr IN expr
     {}
-| EMPTYTREE
+| EMPTYTREE LPAREN option_texpr_ RPAREN
     {}
 | NODE LPAREN expr COMMA expr COMMA expr RPAREN
     {}
-| CASET expr OF LBRACE EMPTYTREE ARROW expr COMMA NODE LPAREN ID COMMA ID COMMA ID RPAREN ARROW expr RBRACE
+| CASET expr OF LBRACE EMPTYTREE LPAREN RPAREN ARROW expr COMMA NODE LPAREN ID COMMA ID COMMA ID RPAREN ARROW expr RBRACE
     {}
 | LBRACE loption_separated_nonempty_list_SEMICOLON_field__ RBRACE
     {}
@@ -297,9 +305,9 @@ expr:
     {}
 | SUPER ID LPAREN loption_separated_nonempty_list_COMMA_expr__ RPAREN
     {}
-| LIST LPAREN loption_separated_nonempty_list_COMMA_expr__ RPAREN
+| MKLIST LPAREN loption_separated_nonempty_list_COMMA_expr__ RPAREN
     {}
-| EMPTYLIST
+| EMPTYLIST LPAREN option_texpr_ RPAREN
     {}
 | HD LPAREN expr RPAREN
     {}
@@ -378,6 +386,10 @@ texpr:
 | LPAREN texpr RPAREN
     {}
 | REFTYPE texpr
+    {}
+| TREETYPE texpr
+    {}
+| LISTTYPE texpr
     {}
 | LBRACE loption_separated_nonempty_list_SEMICOLON_fieldtype__ RBRACE
     {}

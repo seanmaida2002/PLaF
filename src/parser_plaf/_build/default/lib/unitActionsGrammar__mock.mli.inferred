@@ -11,6 +11,7 @@ val xv_separated_nonempty_list_COMMA_ID_ : unit
 val xv_rdecs : unit
 val xv_prog : unit
 val xv_option_type_annotation_ : unit
+val xv_option_texpr_ : unit
 val xv_option_implements_declaration_ : unit
 val xv_obj_fields : unit
 val xv_nonempty_list_rdecs_ : unit

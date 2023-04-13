@@ -4,6 +4,7 @@
 type token = 
   | UNPAIR
   | UNITTYPE
+  | TREETYPE
   | TL
   | TIMES
   | THEN
@@ -28,13 +29,14 @@ type token =
   | NODE
   | NEWREF
   | NEW
+  | MKLIST
   | MINUS
   | MIN
   | METHOD
   | MAXL
   | LPAREN
   | LLANGLE
-  | LIST
+  | LISTTYPE
   | LETREC
   | LET
   | LBRACE
